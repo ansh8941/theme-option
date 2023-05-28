@@ -19,41 +19,12 @@ require_once PLUGIN_DIR_PATH . 'enqueue_scripts.php';
 
 require_once PLUGIN_DIR_PATH . 'inc/admin_menus.php';
 
-require_once PLUGIN_DIR_PATH . 'classes/custom-post-type.php';
-
-
-
-require_once PLUGIN_DIR_PATH . 'classes/meta-box.php';
+ require_once PLUGIN_DIR_PATH . 'custom.php';
 
 
 
 
-
-//require_once PLUGIN_DIR_PATH . 'custom.php';
-
-
-
-
-
-// $obj = new Custom_Post_Type( 'Credential' );
-
-// $obj->add_meta_box( 
-
-//     'Contact Info', 
-
-//     array(
-
-//         'First Name' => 'text',
-
-//         'Last Name' => 'text',
-
-//         'Email' => 'email',
-
-//         'Phone' => 'text'
-
-//     )
-
-// );
+ 
 
 
 
@@ -237,7 +208,7 @@ function topt_section($args)
 
 
 
-    if ($args['field_title_id'] != '') {
+    if (array_key_exists("field_title_id",$args) && $args['field_title_id'] != '') {
 
         $div .= '<div class="row mb-3">
 
@@ -258,7 +229,7 @@ function topt_section($args)
 
 
 
-    if ($args['field_desc_id'] != '') {
+    if (array_key_exists("field_desc_id",$args) && $args['field_desc_id'] != '') {
 
         $div .= '<div class="row mb-3">
 
@@ -278,7 +249,7 @@ function topt_section($args)
     }
 
 
-    if ($args['field_image_url'] != '') {
+    if (array_key_exists("field_image_url",$args) && $args['field_image_url'] != '') {
 
         $div .= '<div class="row mb-3">
 
@@ -298,7 +269,7 @@ function topt_section($args)
     }
 
 
-    if ($args['field_scode_id'] != '') {
+    if (array_key_exists("field_scode_id",$args) && $args['field_scode_id'] != '') {
 
         $div .= '<div class="row mb-3">
 
